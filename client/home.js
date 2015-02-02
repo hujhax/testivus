@@ -1,6 +1,9 @@
 Template.home.helpers({
-    testData: function() {
-        return Session.get("testData");
+    theUserID: function() {
+        return Session.get("theUserID");
+    },
+    five: function() {
+        return Session.get("five");
     }
 });
 
@@ -31,6 +34,7 @@ Template.home.rendered = function(){
             return $.ajax(ajaxSettings);
         })
         .then(function(testData) {
-            Session.set("testData", testData);
+            Session.set("theUserID", testData.userID);
+            Session.set("five", testData.five);
         });
 };
