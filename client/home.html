@@ -1,3 +1,9 @@
 <template name="home">
     <h1>Home!</h1>
+    
+    {{#with testData}}
+        Okay, the authenticated userID is coming back as {{userID}}.
+
+        But five is still {{five}}.
+    {{/with}}
 </template>
